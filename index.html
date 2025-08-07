@@ -1,57 +1,110 @@
 
 <!DOCTYPE html>
 <html>
-<head style="background-color:#f7d331">
-  
+<head >
   <style>
-    .bottom-left-row {
-      position: fixed;      
-      bottom: 0;
-      left: 0;
-      display: flex;         
-      align-items: flex-end; 
-    }
-
-    .bottom-left-row img {
-      width: 200px;
-      height: 200px;
-    }
-  </style>
-  <style>
-    .top-left-row{
+    .right-image img{
+      width: 300px;
+      height: 100vh;
       position:fixed;
       top:0;
-      left:0;
+      right:0;
+      bottom:0;
+      left: 100;
       display:flex;
       align-items:flex-start;
+      animation-name:move-to-the-right;
+    animation-duration:2s;
+    animation-delay:1s;
+    animation-fill-mode: forwards;
+    z-index:1;
     }
-    .top-left-row img{
-      width:200px;
-      height:200px;
+    
+     .title {
+  text-align: center;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 220px 0;
+  animation: fade-out 1.5s ease forwards;
+  animation-delay: 3s; 
+  z-index:1;
     }
+    .first-page-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('images/1.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 1;
+  animation: fade-out 1.5s ease forwards;
+  animation-delay: 3s; 
+  z-index: 0;
+}
+
+    .background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('images/Page of content.jpeg');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation: fade-in 1s forwards;
+  animation-delay: 4.5s;
+  z-index: -1;
+}
+.Chinese-cuisine {
+  position: absolute;
+  font-size: large;
+  font-family: cursive;
+  top: 50px;
+  left: 500px;
+  opacity: 0;
+  animation: fade-in 1s forwards;
+  animation-delay: 4.5s;
+  z-index: -1;
+}
+
+
+
+    @keyframes move-to-the-right{
+      0% {right:0px;bottom:0px;}
+      100% {right:-300px;bottom:0px}
+    }
+    @keyframes fade-out{
+      0%{opacity:1}
+      100% {opacity:0}
+    }
+    @keyframes fade-in{
+      0%{opacity:0}
+      100% {opacity:1}
+    }
+    
   </style>
 </head>
 <body>
-
-  <div class="bottom-left-row">
-    <img src="images/beef and potato stew.jpeg" >
-    <img src="images/taiwanese braised pork.jpg" >
-    <img src="images/bolongese pasta.jpg" >
-    <img src="images/sweet and sour pork rib.jpg" >
-    <img src="images/japanese beef and potato stew.jpg" >
+  <div class="background-image"></div>
+  <div class="first-page-background"></div>
+  <div class="right-image">
+    <img src="images/2.png">
   </div>
-  <div class="top-left-row">
-    <img src="images/long beans with pork.jpg">
-    <img src="images/premier tofu.jpg">
-    <img src="images/taro sweet soup.jpg">
-    <img src="images/tonkotsu ramen.jpg">
-    <img src="images/wintermelon with pork.jpg">
-  </div>
-  <p style="text-align:center; color:black;font-size: 30px; font-weight: bold; margin: 20px;">
-  Kitchen Delight
+  <p class="title" style="font-family:Brush Script MT, cursive;">
+    Kitchen Delight
   </p>
+  <div class="Chinese-cuisine">
+    <a href="Chinese Cuisine.html">Chinese Cuisine</a>
+  </div>
 
 
 </body>
 </html>
-
