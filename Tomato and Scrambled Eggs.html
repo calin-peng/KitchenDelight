@@ -1,16 +1,38 @@
 <!DOCTYPE html>
-<html >
-<style>
-    .title{
-        font-size:large
-        }
-</style>
+<html>
 <head>
-  
-  <title class="title" ><b>Tomato and Scrambled Eggs</b></title>
+  <style>
+    .title {
+      font-size: large;
+      text-align:center;
+      width:100%;
+    }
+    .image {
+      display: block;
+      margin: 0 auto;
+      width: 300px;
+      height: auto;
+    }
+    .bg{
+      position: fixed;      
+      top: 0;
+      left: 0;
+      width: 100vw;      
+      height: 100vh;  
+      background-image: url('images/recipe background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index:-1;
+    }
+  </style>
+  <title>Tomato and Scrambled Eggs</title>
 </head>
 <body>
-<img src="images/tomato scrambled egg.png" >
-<p><b>Ingredients</b></p>
+  <div class="bg"></div>
+  <h1 class="title"><b>Tomato and Scrambled Eggs</b></h1>
+  <img class="image" src="images/tomato scrambled egg.png">
+  
+  <p><b>Ingredients</b></p>
 </body>
 </html>
