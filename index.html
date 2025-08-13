@@ -3,108 +3,177 @@
 <html>
 <head >
   <style>
-    .right-image img{
-      width: 300px;
-      height: 100vh;
-      position:fixed;
-      top:0;
-      right:0;
-      bottom:0;
-      left: 100;
-      display:flex;
-      align-items:flex-start;
-      animation-name:move-to-the-right;
-    animation-duration:2s;
-    animation-delay:1s;
-    animation-fill-mode: forwards;
-    z-index:1;
-    }
-    
-     .title {
-  text-align: center;
-  color: black;
-  font-size: 30px;
-  font-weight: bold;
-  margin: 220px 0;
-  animation: fade-out 1.5s ease forwards;
-  animation-delay: 3s; 
-  z-index:1;
-    }
-    .first-page-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('images/1.png');
-  background-attachment: fixed;
-  background-position: center;
+   .overall-content {
+    position:fixed;
+  top: 95px;
+  width: 100%;
+  height:calc(100vh - 95px);
+  background-image: url('images/Page of content.jpeg');
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  opacity: 1;
-  animation: fade-out 1.5s ease forwards;
-  animation-delay: 3s; 
   z-index: 0;
 }
-
-    .background-image {
+.content-title {
   position: fixed;
-  top: 0;
+  top: 0px;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('images/Page of content.jpeg');
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0;
-  animation: fade-in 1s forwards;
-  animation-delay: 4.5s;
-  z-index: -1;
+  font-size: 20px;
+  width: 100%; 
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.Chinese-cuisine {
+/*navigation bar*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(2, 153, 153);
+  position: fixed;
+  top:50px;
+  width:100%;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #088;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
   position: absolute;
-  font-size: large;
-  font-family: cursive;
-  top: 50px;
-  left: 500px;
-  opacity: 0;
-  animation: fade-in 1s forwards;
-  animation-delay: 4.5s;
-  z-index: -1;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
 
+.dropdown-content a:hover {background-color: #ebe8e8;}
 
-    @keyframes move-to-the-right{
-      0% {right:0px;bottom:0px;}
-      100% {right:-300px;bottom:0px}
-    }
-    @keyframes fade-out{
-      0%{opacity:1}
-      100% {opacity:0}
-    }
-    @keyframes fade-in{
-      0%{opacity:0}
-      100% {opacity:1}
-    }
-    
-  </style>
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+     #content {
+      display:none;
+      position: relative;
+      background-image: url('images/menu background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: calc(100vh - 100px);
+      top:90px;
+      overflow-y: auto;
+      border-radius: 5px;
+      z-index: 0; 
+}
+
+.text-content {
+  position: relative;
+  z-index: 1; 
+  color: black;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+</style>
 </head>
 <body>
-  <div class="background-image"></div>
-  <div class="first-page-background"></div>
-  <div class="right-image">
-    <img src="images/2.png">
+  <div class="overall-content"></div>
+  <div class="content-title">
+    <p><b>Kitchen Delight</b></p>
   </div>
-  <p class="title" style="font-family:Brush Script MT, cursive;">
-    Kitchen Delight
-  </p>
-  <div class="Chinese-cuisine">
-    <a href="Chinese Cuisine.html">Chinese Cuisine</a>
-  </div>
+<div id="content" >
+  <div class="text-content"></div>
+</div>
 
+  <ul>
+  <li><a href="#" onclick="showHome()">Home</a></li>
+    <li class="dropdown">
+    <a href="#" class="dropbtn">Chinese Taste</a>
+    <div class="dropdown-content">
+      <a href="#" onclick="showContent('StirFry')">Stir-fry</a>
+      <a href="#" onclick="showContent('Dessert')">Dessert</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="#" class="dropbtn">Japan Table</a>
+    <div class="dropdown-content">
+      <a href="#">Dessert</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="#" class="dropbtn">Global Flavors</a>
+    <div class="dropdown-content">
+      <a href="#">Stir-fry</a>
+      <a href="#">Dessert</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="#" class="dropbtn">Featured Series</a>
+    <div class="dropdown-content">
+      <a href="#">Bento(Lunch boxes)</a>
+    </div>
+  </li>
+</ul>
+<script>
+const categoryContent = {
+  StirFry:
+   `
+  <br>
+    <br>
+    <br>
+    <h2>Stir-fry dishes</h2>
+    <p><a href="Tomato and Scrambled Eggs.html" target="_blank" >Tomato and Scrambled Eggs</a></p>
 
+  `
+  ,
+
+  Dessert: `
+    <br>
+    <br>
+    <br>
+    <h2>Chinese Dessert</h2>
+    <p><a href="Taro Sweet Soup.html">Taro Sweet Soup</a></p>
+    `
+    ,
+    
+    
+};
+
+function showContent(category) {
+  const textArea = document.querySelector('#content .text-content');
+  textArea.innerHTML = categoryContent[category] || "<p>No content available.</p>";
+  document.getElementById('content').style.display = 'block';
+  document.querySelector('.overall-content').style.display = 'none';
+}
+
+function showHome() {
+  document.getElementById('content').style.display = 'none';
+  document.querySelector('.overall-content').style.display = 'block';
+}
+</script>
 </body>
 </html>
