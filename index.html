@@ -78,18 +78,22 @@ li.dropdown {
 }
 
      #content {
-      display:none;
       position: relative;
-      background-image: url('images/menu-background.jpg');
+      margin-top: 100px;
+      height: calc(100vh - 100px);
+      overflow-y: auto;
+      background-image: url('images/menu-background.jpg'); /* renamed file */
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      height: calc(100vh - 100px);
-      top:90px;
-      overflow-y: auto;
+      color: black;
+      font-family: Arial, sans-serif;
       border-radius: 5px;
-      z-index: 0; 
-}
+      z-index: 1;
+      display: none;
+    }
+
+    
 
 .text-content {
   position: relative;
