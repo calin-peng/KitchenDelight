@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://calin-peng.github.io/sitemap.xml
