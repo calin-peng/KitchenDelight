@@ -121,14 +121,13 @@ li.dropdown {
     <li class="dropdown">
     <a href="#" class="dropbtn">Chinese Taste</a>
     <div class="dropdown-content">
-      <a href="#" onclick="showContent('StirFry')">Stir-fry</a>
       <a href="#" onclick="showContent('Dessert')">Dessert</a>
     </div>
   </li>
   <li class="dropdown">
     <a href="#" class="dropbtn">Japan Table</a>
     <div class="dropdown-content">
-      <a href="#">Dessert</a>
+      <a href="#" onclick="showContent('JapaneseStyleDishes')">Japanese-style dishes</a>
     </div>
   </li>
   <li class="dropdown">
@@ -147,17 +146,7 @@ li.dropdown {
 </ul>
 <script>
 const categoryContent = {
-  StirFry:
-   `
-  <br>
-    <br>
-    <br>
-    <h2>Stir-fry dishes</h2>
-    <p><a href="Tomato and Scrambled Eggs.html" target="_blank" >Tomato and Scrambled Eggs</a></p>
-
-  `
-  ,
-
+  
   Dessert: `
     <br>
     <br>
@@ -166,6 +155,15 @@ const categoryContent = {
     <p><a href="Taro Sweet Soup.html">Taro Sweet Soup</a></p>
     `
     ,
+    JapaneseStyleDishes:
+    `
+    <br>
+    <br>
+    <br>
+    <h2>Japanese-style Dishes</h2>
+    <p><a href="Japanese Style Beef and Potato Stew.html">Japanese Style Beef and Potato Stew</a></p>
+    `
+
     };
 
 function showContent(category) {
