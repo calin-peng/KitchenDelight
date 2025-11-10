@@ -136,7 +136,8 @@ li.dropdown {
   <li class="dropdown">
     <a href="#" class="dropButton">Global Flavors</a>
     <div class="dropdown-content">
-      <a href="#">Stir-fry</a>
+      <a href="#" onclick="showContent('Pasta')">Pasta</a>
+      <a href="#" onclick="showContent('WesternStew')">Stew</a>
       <a href="#">Dessert</a>
     </div>
   </li>
@@ -186,8 +187,25 @@ const categoryContent = {
     <p><a href="Stir-fried Long Beans & Pork.html">Stir-fried Long Beans & Pork/豆角炒肉末</a></p>
     <p><a href="Stir-fried Winter Melon with Pork.html">Stir-fried Winter Melon & Pork/冬瓜肉末</a></p>
     <p><a href="Thousand-leaf Tofu.html">Thousand-leaf Tofu/千叶豆腐</a></p>
+    `,
+  Pasta:
     `
-
+    <br>
+    <br>
+    <br>
+    <h2>Pasta</h2>
+    <p><a href="Baked Pasta.html">Baked pasta</a></p>
+    
+    `,
+    WesternStew:
+    `
+    <br>
+    <br>
+    <br>
+    <h2>Stew</h2>
+    <p><a href="Beef & Potato Cream Stew.html">Beef & Potato Cream Stew</a></p>
+    
+    `
     };
 
 function showContent(category) {
