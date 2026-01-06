@@ -79,6 +79,13 @@ li.dropdown {
   text-align: left;
 }
 
+.content-image{
+  position:relative;
+  display: block;
+  left:5px;
+  width: 120px;
+  height: 100px;
+}
 .dropdown-content a:hover {background-color: #ebe8e8;}
 
 .dropdown:hover .dropdown-content {
@@ -122,8 +129,9 @@ li.dropdown {
     <a href="#" class="dropButton">Chinese Taste</a>
     <div class="dropdown-content">
       <a href="#" onclick="showContent('StirFry')">Stir-fry</a>
-      <a href="#" onclick="showContent('Stew')">Stew</a>
+      <a href="#" onclick="showContent('StewORSteaming')">Stew/Steaming</a>
       <a href="#" onclick="showContent('Dessert')">Dessert</a>
+      <a href="#" onclick="showContent('LocalFlavours')">Local Flavours</a>
 
     </div>
   </li>
@@ -150,13 +158,17 @@ li.dropdown {
 </ul>
 <script>
 const categoryContent = {
-  Stew: `
+  StewORSteaming: `
     <br>
     <br>
     <br>
-    <h2>Chinese Stew</h2>
+    <h2>Chinese Stew/Steaming</h2>
+    <img class="content-image" src="images/taiwanese braised pork.jpg">
     <p><a href="Taiwanese Style Braised Pork.html">Taiwanese Style Braised Pork/台式卤肉</a></p>
+    <img class="content-image" src="images/dongpo pork.jpg">
     <p><a href="DongPo Pork.html">DongPo Pork/东坡肉</a></p>
+     <img class="content-image" src="images/chicken & mushroom stew.jpg">
+    <p><a href="Chicken & Mushroom Stew.html">Steamed Chicken & Mushroom/口蘑蒸鸡腿</a></p>
     `
     ,
   Dessert: `
@@ -164,8 +176,19 @@ const categoryContent = {
     <br>
     <br>
     <h2>Chinese Dessert</h2>
+     <img class="content-image" src="images/taro sweet soup.jpg">
     <p><a href="Taro Sweet Soup.html">Taro Sweet Soup</a></p>
     `
+    ,
+    LocalFlavours:`
+    <br>
+    <br>
+    <br>
+    <h2>Local Snacks</h2>
+    <img class="content-image" src="images/dou pi.jpg">
+    <p><a href="Dou Pi.html">Dou Pi/Wuhan Pancake/豆皮</a></p>
+    `
+    
     ,
     JapaneseStyleDishes:
     `
@@ -173,8 +196,16 @@ const categoryContent = {
     <br>
     <br>
     <h2>Japanese-style Dishes</h2>
+     <img class="content-image" src="images/japanese beef and potato stew.jpg">
     <p><a href="Japanese Style Beef and Potato Stew.html">Japanese Style Beef and Potato Stew</a></p>
+     <img class="content-image" src="images/teriyaki oyakodon.jpg">
     <p><a href="Teriyaki Oyakodon.html">Teriyaki Oyakodon</a></p>
+     <img class="content-image" src="images/omelet rice with seafood tomato sauce.jpg">
+    <p><a href="Omelet Rice with Seafood Tomato Sauce.html">Omelet Rice with Seafood Tomato Sauce</a></p>
+    <img class="content-image" src="images/curry.jpg">
+    <p><a href="Curry.html">Curry</a></p>
+    <img class="content-image" src="images/karaage.jpg">
+    <p><a href="Japanese Style Fried Chicken (Karaage).html">Japanese Style Fried Chicken (Karaage)</a></p>
     `
     ,
     StirFry:
@@ -183,10 +214,16 @@ const categoryContent = {
     <br>
     <br>
     <h2>Chinese Stir-fry</h2>
+     <img class="content-image" src="images/braised tofu with pork.jpg">
     <p><a href="Braised Tofu with Pork.html">Braised tofu with pork/肉末豆腐</a></p>
+     <img class="content-image" src="images/long beans with pork.jpg">
     <p><a href="Stir-fried Long Beans & Pork.html">Stir-fried Long Beans & Pork/豆角炒肉末</a></p>
+     <img class="content-image" src="images/wintermelon with pork.jpg">
     <p><a href="Stir-fried Winter Melon with Pork.html">Stir-fried Winter Melon & Pork/冬瓜肉末</a></p>
+    <img class="content-image" src="images/thousand-leaf tofu.jpg">
     <p><a href="Thousand-leaf Tofu.html">Thousand-leaf Tofu/千叶豆腐</a></p>
+    <img class="content-image" src="images/luffa with egg & pork.jpg">
+    <p><a href="Luffa with Egg & Pork.html">Luffa with Egg & Pork/丝瓜炒蛋</a></p>
     `,
   Pasta:
     `
@@ -194,8 +231,12 @@ const categoryContent = {
     <br>
     <br>
     <h2>Pasta</h2>
+     <img class="content-image" src="images/baked pasta.jpeg">
     <p><a href="Baked Pasta.html">Baked pasta</a></p>
-    
+    <img class="content-image" src="images/spaghetti bolongnese.jpg">
+    <p><a href="Spaghetti Bolongese.html">Spaghetti Bolongnese</a></p>
+    <img class="content-image" src="images/black pepper sauce pasta.jpg">
+    <p><a href="Black Pepper Sauce Pasta.html">Black Pepper Sauce Pasta</a></p>
     `,
     WesternStew:
     `
@@ -203,7 +244,10 @@ const categoryContent = {
     <br>
     <br>
     <h2>Stew</h2>
+     <img class="content-image" src="images/beef and potato stew.jpeg">
     <p><a href="Beef & Potato Cream Stew.html">Beef & Potato Cream Stew</a></p>
+    <img class="content-image" src="images/mushroom cream stew.jpg">
+    <p><a href="Mushroon Cream Stew.html">Mushroom Cream Stew</a></p>
     
     `
     };
