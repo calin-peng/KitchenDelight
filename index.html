@@ -131,7 +131,7 @@ li.dropdown {
       <a href="#" onclick="showContent('StirFry')">Stir-fry</a>
       <a href="#" onclick="showContent('StewORSteaming')">Stew/Steaming</a>
       <a href="#" onclick="showContent('Dessert')">Dessert</a>
-      <a href="#" onclick="showContent('LocalFlavours')">Local Flavours</a>
+      <a href="#" onclick="showContent('LocalDelicacies')">Local Delicacies</a>
 
     </div>
   </li>
@@ -146,13 +146,13 @@ li.dropdown {
     <div class="dropdown-content">
       <a href="#" onclick="showContent('Pasta')">Pasta</a>
       <a href="#" onclick="showContent('WesternStew')">Stew</a>
-      <a href="#">Dessert</a>
+      <a href="#" onclick="showContent('WesternOthers')">Others</a>
     </div>
   </li>
   <li class="dropdown">
     <a href="#" class="dropButton">Featured Series</a>
     <div class="dropdown-content">
-      <a href="#">Bento(Lunch boxes)</a>
+     <a href="#" onclick="showContent('Bento')">Bento(Lunch Boxes)</a>
     </div>
   </li>
 </ul>
@@ -165,10 +165,11 @@ const categoryContent = {
     <h2>Chinese Stew/Steaming</h2>
     <img class="content-image" src="images/taiwanese braised pork.jpg">
     <p><a href="Taiwanese Style Braised Pork.html">Taiwanese Style Braised Pork/台式卤肉</a></p>
-    <img class="content-image" src="images/dongpo pork.jpg">
-    <p><a href="DongPo Pork.html">DongPo Pork/东坡肉</a></p>
      <img class="content-image" src="images/chicken & mushroom stew.jpg">
     <p><a href="Chicken & Mushroom Stew.html">Steamed Chicken & Mushroom/口蘑蒸鸡腿</a></p>
+    <img class="content-image" src="images/sweet and sour pork rib.jpg">
+    <p><a href="Sweet and Sour Pork Ribs.html">Sweet and Sour Pork Ribs/糖醋排骨</a></p>
+  
     `
     ,
   Dessert: `
@@ -180,13 +181,18 @@ const categoryContent = {
     <p><a href="Taro Sweet Soup.html">Taro Sweet Soup</a></p>
     `
     ,
-    LocalFlavours:`
+    LocalDelicacies:`
     <br>
     <br>
     <br>
-    <h2>Local Snacks</h2>
+    <h2>Local Delicacies</h2>
     <img class="content-image" src="images/dou pi.jpg">
     <p><a href="Dou Pi.html">Dou Pi/Wuhan Pancake/豆皮</a></p>
+   <img class="content-image" src="images/dongpo pork.jpg">
+    <p><a href="DongPo Pork.html">DongPo Pork/东坡肉</a></p>
+     <img class="content-image" src="images/clay pot rice.jpg">
+    <p><a href="Clay Pot Rice.html">Clay Pot Rice/煲仔饭</a></p>
+    
     `
     
     ,
@@ -206,6 +212,10 @@ const categoryContent = {
     <p><a href="Curry.html">Curry</a></p>
     <img class="content-image" src="images/karaage.jpg">
     <p><a href="Japanese Style Fried Chicken (Karaage).html">Japanese Style Fried Chicken (Karaage)</a></p>
+    <img class="content-image" src="images/tonkotsu ramen.jpg">
+    <p><a href="Tonkotsu Ramen.html">Tonkotsu Ramen</a></p>
+    <img class="content-image" src="images/sushi.jpg">
+    <p><a href="Sushi.html">Sushi</a></p>
     `
     ,
     StirFry:
@@ -249,6 +259,25 @@ const categoryContent = {
     <img class="content-image" src="images/mushroom cream stew.jpg">
     <p><a href="Mushroon Cream Stew.html">Mushroom Cream Stew</a></p>
     
+    `,
+    Others:
+    `<br>
+    <br>
+    <br>
+    <h2>Others</h2>
+     <img class="content-image" src="images/ratatouille base.jpg">
+    <p><a href="Ratatouille Base.html">Ratatouille(just base)</a></p>
+    
+  
+    `
+    ,
+    Bento:showContent`
+    <br>
+    <br>
+    <br>
+    <h2>Others</h2>
+     <img class="content-image" src="images/ratatouille base.jpg">
+    <p><a href="Ratatouille Base.html">Ratatouille(just base)</a></p>
     `
     };
 
