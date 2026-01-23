@@ -139,7 +139,8 @@ li.dropdown {
   <li class="dropdown">
     <a href="#" class="dropButton">Japan Table</a>
     <div class="dropdown-content">
-      <a href="#" onclick="showContent('JapaneseStyleDishes')">Japanese-style dishes</a>
+      <a href="#" onclick="showContent('JapaneseOthers')">Others</a>
+      <a href="#" onclick="showContent('JapaneseStew')">Stew</a>
     </div>
   </li>
   <li class="dropdown">
@@ -165,11 +166,11 @@ const categoryContent = {
     <br>
     <h2>Chinese Stew/Steaming</h2>
     <img class="content-image" src="images/taiwanese braised pork.jpg">
-    <p><a href="Taiwanese Style Braised Pork.html">Taiwanese Style Braised Pork/台式卤肉</a></p>
+    <p><a href="Taiwanese Style Braised Pork.html">Taiwanese Style Braised Pork</a></p>
      <img class="content-image" src="images/chicken & mushroom stew.jpg">
-    <p><a href="Chicken & Mushroom Stew.html">Steamed Chicken & Mushroom/口蘑蒸鸡腿</a></p>
+    <p><a href="Chicken & Mushroom Stew.html">Steamed Chicken & Mushroom</a></p>
     <img class="content-image" src="images/sweet and sour pork rib.jpg">
-    <p><a href="Sweet and Sour Pork Ribs.html">Sweet and Sour Pork Ribs/糖醋排骨</a></p>
+    <p><a href="Sweet and Sour Pork Ribs.html">Sweet and Sour Pork Ribs</a></p>
   
     `
     ,
@@ -188,40 +189,51 @@ const categoryContent = {
     <br>
     <h2>Local Delicacies</h2>
     <img class="content-image" src="images/dou pi.jpg">
-    <p><a href="Dou Pi.html">Dou Pi/Wuhan Pancake/豆皮</a></p>
+    <p><a href="Dou Pi.html">Dou Pi/Wuhan Pancake</a></p>
    <img class="content-image" src="images/dongpo pork.jpg">
-    <p><a href="DongPo Pork.html">DongPo Pork/东坡肉</a></p>
+    <p><a href="DongPo Pork.html">DongPo Pork</a></p>
      <img class="content-image" src="images/clay pot rice.jpg">
-    <p><a href="Clay Pot Rice.html">Clay Pot Rice/煲仔饭</a></p>
+    <p><a href="Clay Pot Rice.html">Clay Pot Rice</a></p>
     
     `,
     ChineseOthers:`
  <img class="content-image" src="images/noodle with soybean paste sauce.jpg">
-    <p><a href="Noodles with Soybean Paste Sauce.html">Noodles with Soybean Paste Sauce/炸酱面</a></p>
+    <p><a href="Noodles with Soybean Paste Sauce.html">Noodles with Soybean Paste Sauce</a></p>
+    <img class="content-image" src="images/braised chicken with potato.jpg">
+    <p><a href="Braised Chicken with Potato.html">Braised chicken w/Potato</a></p>
+    <img class="content-image" src="images/wintermelon meatball soup.jpg">
+    <p><a href="Wintermelon Meatball Soup.html">Wintermelon Meatball Soup</a></p>
     `
     ,
-    JapaneseStyleDishes:
+    JapaneseOthers:
     `
     <br>
     <br>
     <br>
     <h2>Japanese-style Dishes</h2>
-     <img class="content-image" src="images/japanese beef and potato stew.jpg">
-    <p><a href="Japanese Style Beef and Potato Stew.html">Japanese Style Beef and Potato Stew</a></p>
-     <img class="content-image" src="images/teriyaki oyakodon.jpg">
+     <img class="content-image" src="images/teriyaki Oyakodon.jpg">
     <p><a href="Teriyaki Oyakodon.html">Teriyaki Oyakodon</a></p>
      <img class="content-image" src="images/omelet rice with seafood tomato sauce.jpg">
     <p><a href="Omelet Rice with Seafood Tomato Sauce.html">Omelet Rice with Seafood Tomato Sauce</a></p>
-    <img class="content-image" src="images/curry.jpg">
-    <p><a href="Curry.html">Curry</a></p>
     <img class="content-image" src="images/karaage.jpg">
     <p><a href="Japanese Style Fried Chicken (Karaage).html">Japanese Style Fried Chicken (Karaage)</a></p>
     <img class="content-image" src="images/tonkotsu ramen.jpg">
     <p><a href="Tonkotsu Ramen.html">Tonkotsu Ramen</a></p>
     <img class="content-image" src="images/sushi.jpg">
     <p><a href="Sushi.html">Sushi</a></p>
+ ]
     `
     ,
+    JapaneseStew:`
+    <img class="content-image" src="images/japanese beef and potato stew.jpg">
+    <p><a href="Japanese Style Beef and Potato Stew.html">Japanese Style Beef and Potato Stew</a></p>
+    <img class="content-image" src="images/curry.jpg">
+    <p><a href="Curry.html">Curry</a></p>
+     <img class="content-image" src="images/stew and riceball.jpg">
+    <p><a href="Stew and Riceball.html">Stew and Riceball Combo</a></p>
+    <img class="content-image" src="images/chicken and potato cream stew.jpg">
+    <p><a href="Chicken & Potato Cream Stew.html">Chicken & Potato Cream Stew</a></p>
+    `,
     StirFry:
     `
     <br>
@@ -229,15 +241,15 @@ const categoryContent = {
     <br>
     <h2>Chinese Stir-fry</h2>
      <img class="content-image" src="images/braised tofu with pork.jpg">
-    <p><a href="Braised Tofu with Pork.html">Braised tofu with pork/肉末豆腐</a></p>
+    <p><a href="Braised Tofu with Pork.html">Braised tofu with pork</a></p>
      <img class="content-image" src="images/long beans with pork.jpg">
-    <p><a href="Stir-fried Long Beans & Pork.html">Stir-fried Long Beans & Pork/豆角炒肉末</a></p>
+    <p><a href="Stir-fried Long Beans & Pork.html">Stir-fried Long Beans & Pork</a></p>
      <img class="content-image" src="images/wintermelon with pork.jpg">
-    <p><a href="Stir-fried Winter Melon with Pork.html">Stir-fried Winter Melon & Pork/冬瓜肉末</a></p>
+    <p><a href="Stir-fried Winter Melon with Pork.html">Stir-fried Winter Melon & Pork</a></p>
     <img class="content-image" src="images/thousand-leaf tofu.jpg">
-    <p><a href="Thousand-leaf Tofu.html">Thousand-leaf Tofu/千叶豆腐</a></p>
+    <p><a href="Thousand-leaf Tofu.html">Thousand-leaf Tofu</a></p>
     <img class="content-image" src="images/luffa with egg & pork.jpg">
-    <p><a href="Luffa with Egg & Pork.html">Luffa with Egg & Pork/丝瓜炒蛋</a></p>
+    <p><a href="Luffa with Egg & Pork.html">Luffa with Egg & Pork</a></p>
     `,
   Pasta:
     `
@@ -250,7 +262,7 @@ const categoryContent = {
     <img class="content-image" src="images/spaghetti bolongnese.jpg">
     <p><a href="Spaghetti Bolongese.html">Spaghetti Bolongnese</a></p>
     <img class="content-image" src="images/black pepper sauce pasta.jpg">
-    <p><a href="Black Pepper Sauce Pasta.html">Black Pepper Sauce Pasta</a></p>
+    <p><a href="Black Pepper Sauce pasta.html">Black Pepper Sauce Pasta</a></p>
     <img class="content-image" src="images/cream pasta.jpg">
     <p><a href="Cream Pasta.html">Cream Pasta</a></p>
     `,
@@ -266,13 +278,15 @@ const categoryContent = {
     <p><a href="Mushroon Cream Stew.html">Mushroom Cream Stew</a></p>
     
     `,
-    Others:
+    WesternOthers:
     `<br>
     <br>
     <br>
     <h2>Others</h2>
      <img class="content-image" src="images/ratatouille base.jpg">
     <p><a href="Ratatouille Base.html">Ratatouille(just base)</a></p>
+     <img class="content-image" src="images/swedish meatball.jpg">
+    <p><a href="Swedish Meatball.html">Swedish Meatball</a></p>
     
   
     `
@@ -281,9 +295,15 @@ const categoryContent = {
     <br>
     <br>
     <br>
-    <h2>Others</h2>
+    <h2>Bento</h2>
      <img class="content-image" src="images/teriyaki chicken bento.jpg">
     <p><a href="Teriyaki Chicken Bento.html">Teriyaki Chicken Bento</a></p>
+    <img class="content-image" src="images/fried potato bun bento.jpg">
+    <p><a href="Fried Potato Bun Bento.html">Fried Potato Bun Bento</a></p>
+     <img class="content-image" src="images/omelette rice bento.jpg">
+    <p><a href="Omelette Rice Bento.html">Omelette Rice Bento</a></p>
+    <img class="content-image" src="images/english muffin sandwich.jpg">
+    <p><a href="English Muffin Sandwich Bento.html">English Muffin Sandwich Bento</a></p>
     `
     };
 
