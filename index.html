@@ -11,15 +11,18 @@
 
 <head >
   <style>
-   .overall-content {
+    
+
+    
+   .overall-content {/*picture on the home page.find anything with the class overall-content and apply the style below*/
     position:fixed;
-  top: 95px;
-  width: 100%;
-  height:calc(100vh - 95px);
-  background-image: url('images/Page of content.jpeg');
-  background-size: cover;
+    top: 45px; /*distance to the top*/
+  width: 100%; /*cover the entire width of the screen*/
+  height:calc(100vh - 45px); /*100% height minus 95 px - space on the top*/
+  background-image: url('images/Page of content.jpeg'); /*the background image for page of content*/
+  background-size: cover;/*cover the entire container, even it means to stretch. default: auto(original size)*/
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;/*default is repeat, so the image will be repeated and the last one will be clipped if does not fit*/
   z-index: 0;
 }
 .content-title {
@@ -31,39 +34,48 @@
   text-align: center;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+.content-image{/*the images of the dished in the content*/
+  position:relative;
+  display: block;
+  left:5px;
+  width: 200px;
+  height: 160px;
+}
+
 /*navigation bar*/
-ul {
-  list-style-type: none;
+
+ul {/*the entire list(the style of the bar, not the items inside of it. the structure of a list: <ul><li></li><li></li></ul>*/
+  list-style-type: none;/*no bullet point. etc(because navbar is essentially a list)*/
   margin: 0;
-  padding: 0;
+  padding: 0; /*the space sround the element*/
   background-color: rgb(2, 153, 153);
-  position: fixed;
-  top:50px;
+  position: fixed;/*will not move even you scroll. static: default. relative: location can be defined, coordinate is relative to the page. absolute: coordinate can be defined but is relative to the closest "relative" element */
+  top:0;
   width:100%;
 }
 
-li {
-  float: left;
+li { /*the elements in the lsit(Home, about, etc)*/
+  float: left;/*let them arrange horizontally(vertical nav bar does not have this)*/
 }
 
-li a, .dropButton {
-  display: inline-block;
+li a, .dropButton {/*"," means or. find all the "a" inside the li and apply this style. find everything with the class gropButton and apply this style*/
+  display: inline-block;/*default: inline(inline element, no variation in height and width). block: a block, start a new line, have h and w. inline-block: inline but have h and w.*/
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 16px;/*space around the text*/
   text-decoration: none;
 }
 
-li a:hover, .dropdown:hover .dropButton {
+li a:hover, .dropdown:hover .dropButton {/*apply this style to dropbutton when wither happens: 1. an <a> in the <li> is hovered upon(stir-fry. etc). 2. something with the class dropdown is hovered upon(chinese taste,etc). make sure that the button is darker as long as the cursor is on the menu */
   background-color: #088;
 }
 
-li.dropdown {
-  display: inline-block;
+li.dropdown {/*apply this style to anyhting that is <li> and have the class dropdown*/
+  display: inline-block;/*arrange Home, About... in the inline block format*/
 }
 
-.dropdown-content {
-  display: none;
+.dropdown-content {/*the "container" of the sub types under each cuisine e.x. stir fry .etc*/
+  display: none; /*make them invisible for now(until hovered upon)*/
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
@@ -71,7 +83,7 @@ li.dropdown {
   z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown-content a {/*the sub types under each cuisine e.x. stir fry .etc*/
   color: black;
   padding: 12px 16px;
   text-decoration: none;
@@ -79,28 +91,40 @@ li.dropdown {
   text-align: left;
 }
 
-.content-image{
-  position:relative;
-  display: block;
-  left:5px;
-  width: 120px;
-  height: 100px;
+.dropdown-content a:hover {/*if this sub types are hovered upon, their background(container)turn grey*/
+    background-color: #ebe8e8;
 }
-.dropdown-content a:hover {background-color: #ebe8e8;}
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content {/*do this to the gropdown-content when the dropdown is hovered upon*/
   display: block;
 }
 
+.container{
+
+    display:grid;
+    grid-template-columns:300px 300px 300px 300px;
+    padding:10px;
+    grid-gap:10px;
+}
+.container > div,.content-image{
+    padding: 1px;
+}
+.container img{
+    width:300px;
+    height:260px;
+}
+.content-text{
+    text-align:left;
+}
     #content {
       display:none;
       position: relative;
-      background-image: url('images/menu-background.jpg');
+      background-image: url('images/recipe-background.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      height: calc(100vh - 100px);
-      top:90px;
+      height: calc(100vh - 45px);
+      top:45px;
       overflow-y: auto;
       border-radius: 5px;
       z-index: 0; 
@@ -116,15 +140,15 @@ li.dropdown {
 </head>
 <body>
   <div class="overall-content"></div>
-  <div class="content-title">
-    <p><b>Kitchen Delight</b></p>
-  </div>
+  
+  
 <div id="content" >
   <div class="text-content"></div>
 </div>
 
   <ul>
   <li><a href="#" onclick="showHome()">Home</a></li>
+
     <li class="dropdown">
     <a href="#" class="dropButton">Chinese Taste</a>
     <div class="dropdown-content">
@@ -133,9 +157,9 @@ li.dropdown {
       <a href="#" onclick="showContent('ChineseDessert')">Dessert</a>
       <a href="#" onclick="showContent('LocalDelicacies')">Local Delicacies</a>
       <a href="#" onclick="showContent('ChineseOthers')">Others</a>
-
     </div>
   </li>
+
   <li class="dropdown">
     <a href="#" class="dropButton">Japan Table</a>
     <div class="dropdown-content">
@@ -143,6 +167,7 @@ li.dropdown {
       <a href="#" onclick="showContent('JapaneseStew')">Stew</a>
     </div>
   </li>
+
   <li class="dropdown">
     <a href="#" class="dropButton">Global Flavors</a>
     <div class="dropdown-content">
@@ -165,6 +190,7 @@ li.dropdown {
     </div>
   </li>
 </ul>
+
 <script>
 const categoryContent = {
   StewORSteaming: `
@@ -172,12 +198,15 @@ const categoryContent = {
     <br>
     <br>
     <h2>Chinese Stew/Steaming</h2>
-    <img class="content-image" src="images/taiwanese braised pork.jpg">
-    <p><a href="Taiwanese Style Braised Pork.html">Taiwanese Style Braised Pork</a></p>
-     <img class="content-image" src="images/chicken & mushroom stew.jpg">
-    <p><a href="Chicken & Mushroom Stew.html">Steamed Chicken & Mushroom</a></p>
-    <img class="content-image" src="images/sweet and sour pork rib.jpg">
-    <p><a href="Sweet and Sour Pork Ribs.html">Sweet and Sour Pork Ribs</a></p>
+    <div class="container">
+        <img  src="images/taiwanese braised pork.jpg">
+    <p ><a href="#" onclick="showContent('tsbp')">Taiwanese Style Braised Pork</p>
+     <img  src="images/chicken & mushroom stew.jpg">
+    <p><a href="#" onclick="showContent('cms')">Steamed Chicken & Mushroom</a></p>
+    <img  src="images/sweet and sour pork rib.jpg">
+    <p><a href="#" onclick="showContent('saspr')">Sweet and Sour Pork Ribs</a></p>
+    </div>
+    
   
     `
     ,
@@ -186,8 +215,10 @@ const categoryContent = {
     <br>
     <br>
     <h2>Chinese Dessert</h2>
+    <div class="container">
      <img class="content-image" src="images/taro sweet soup.jpg">
-    <p><a href="Taro Sweet Soup.html">Taro Sweet Soup</a></p>
+    <p><a href="#" onclick="showContent('tss')">Taro Sweet Soup</a></p>
+    </div>
     `
     ,
     LocalDelicacies:`
@@ -195,23 +226,28 @@ const categoryContent = {
     <br>
     <br>
     <h2>Local Delicacies</h2>
+    <div class="container">
     <img class="content-image" src="images/dou pi.jpg">
-    <p><a href="Dou Pi.html">Dou Pi/Wuhan Pancake</a></p>
+    <p><a href="#" onclick="showContent('dp')">Dou Pi/Wuhan Pancake</a></p>
    <img class="content-image" src="images/dongpo pork.jpg">
-    <p><a href="DongPo Pork.html">DongPo Pork</a></p>
+    <p><a href="#" onclick="showContent('dpp')">DongPo Pork</a></p>
      <img class="content-image" src="images/clay pot rice.jpg">
-    <p><a href="Clay Pot Rice.html">Clay Pot Rice</a></p>
+    <p><a href="#" onclick="showContent('cpr')">Clay Pot Rice</a></p>
+    </div>
     
     `,
     ChineseOthers:`
  <img class="content-image" src="images/noodle with soybean paste sauce.jpg">
-    <p><a href="Noodles with Soybean Paste Sauce.html">Noodles with Soybean Paste Sauce</a></p>
+ <h2>Others</h2>
+     <div class="container">
+    <p><a href="#" onclick="showContent('nwsbs')">Noodles with Soybean Paste Sauce</a></p>
     <img class="content-image" src="images/braised chicken with potato.jpg">
-    <p><a href="Braised Chicken with Potato.html">Braised chicken w/Potato</a></p>
+    <p><a href="#" onclick="showContent('bcwp')">Braised chicken w/Potato</a></p>
     <img class="content-image" src="images/wintermelon meatball soup.jpg">
-    <p><a href="Wintermelon Meatball Soup.html">Wintermelon Meatball Soup</a></p>
+    <p><a href="#" onclick="showContent('wms')">Wintermelon Meatball Soup</a></p>
     <img class="content-image" src="images/soy sauce chicken drumstick.jpg">
-    <p><a href="Soy Sauce Chicken Drumsticks.html">Soy Sauce Chicken Drumsticks</a></p>
+    <p><a href="#" onclick="showContent('sscd')">Soy Sauce Chicken Drumsticks</a></p>
+    <div/>
     `
     ,
     JapaneseOthers:
@@ -220,18 +256,20 @@ const categoryContent = {
     <br>
     <br>
     <h2>Japanese-style Dishes</h2>
+        <div class="container">
      <img class="content-image" src="images/teriyaki Oyakodon.jpg">
-    <p><a href="Teriyaki Oyakodon.html">Teriyaki Oyakodon</a></p>
+    <p><a href="#" onclick="showContent('to')">Teriyaki Oyakodon</a></p>
      <img class="content-image" src="images/omelet rice with seafood tomato sauce.jpg">
-    <p><a href="Omelet Rice with Seafood Tomato Sauce.html">Omelet Rice with Seafood Tomato Sauce</a></p>
+    <p><a href="#" onclick="showContent('orwsts')">Omelet Rice with Seafood Tomato Sauce</a></p>
     <img class="content-image" src="images/karaage.jpg">
-    <p><a href="Japanese Style Fried Chicken (Karaage).html">Japanese Style Fried Chicken (Karaage)</a></p>
+    <p><a href="#" onclick="showContent('jsfc')">Japanese Style Fried Chicken (Karaage)</a></p>
     <img class="content-image" src="images/tonkotsu ramen.jpg">
-    <p><a href="Tonkotsu Ramen.html">Tonkotsu Ramen</a></p>
+    <p><a href="#" onclick="showContent('tr')">Tonkotsu Ramen</a></p>
     <img class="content-image" src="images/sushi.jpg">
-    <p><a href="Sushi.html">Sushi</a></p>
+    <p><a href="#" onclick="showContent('s')">Sushi</a></p>
   <img class="content-image" src="images/japanese style tomato beef rice bowl.jpg">
-    <p><a href="Japanese Style Tomato Beef Rice Bowl.html">Japanese Style Tomato Beef Rice Bowl</a></p>
+    <p><a href="#" onclick="showContent('jstbrb')">Japanese Style Tomato Beef Rice Bowl</a></p>
+    </div>
     `
     ,
     JapaneseStew:`
@@ -239,16 +277,18 @@ const categoryContent = {
     <br>
     <br>
     <h2>Japanese Stew</h2>
+        <div class="container">
     <img class="content-image" src="images/japanese beef and potato stew.jpg">
-    <p><a href="Japanese Style Beef and Potato Stew.html">Japanese Style Beef and Potato Stew</a></p>
+    <p><a href="#" onclick="showContent('jsbaps')">Japanese Style Beef and Potato Stew</a></p>
     <img class="content-image" src="images/curry.jpg">
-    <p><a href="Curry.html">Curry</a></p>
+    <p><a href="#" onclick="showContent('c')">Curry</a></p>
      <img class="content-image" src="images/stew and riceball.jpg">
-    <p><a href="Stew and Riceball.html">Stew and Riceball Combo</a></p>
+    <p><a href="#" onclick="showContent('sar')">Stew and Riceball Combo</a></p>
     <img class="content-image" src="images/chicken and potato cream stew.jpg">
-    <p><a href="Chicken & Potato Cream Stew.html">Chicken & Potato Cream Stew</a></p>
+    <p><a href="#" onclick="showContent('cpcs')">Chicken & Potato Cream Stew</a></p>
     <img class="content-image" src="images/gyudon.jpg">
-    <p><a href="Gyudon.html">Gyudon(Japanese Beef Rice Bowl)</a></p>
+    <p><a href="#" onclick="showContent('g')">Gyudon(Japanese Beef Rice Bowl)</a></p>
+    </div>
     `,
     StirFry:
     `
@@ -256,16 +296,18 @@ const categoryContent = {
     <br>
     <br>
     <h2>Chinese Stir-fry</h2>
+        <div class="container">
      <img class="content-image" src="images/braised tofu with pork.jpg">
-    <p><a href="Braised Tofu with Pork.html">Braised tofu with pork</a></p>
+    <p><a href="#" onclick="showContent('bpwp')">Braised tofu with pork</a></p>
      <img class="content-image" src="images/long beans with pork.jpg">
-    <p><a href="Stir-Fried Long Beans & Pork.html">Stir-fried Long Beans & Pork</a></p>
+    <p><a href="#" onclick="showContent('sflbp')">Stir-fried Long Beans & Pork</a></p>
      <img class="content-image" src="images/wintermelon with pork.jpg">
-    <p><a href="Stir-fried Winter Melon with Pork.html">Stir-fried Winter Melon & Pork</a></p>
+    <p><a href="#" onclick="showContent('tlt')">Stir-fried Winter Melon & Pork</a></p>
     <img class="content-image" src="images/thousand-leaf tofu.jpg">
-    <p><a href="Thousand-leaf Tofu.html">Thousand-leaf Tofu</a></p>
+    <p><a href="#" onclick="showContent('lwep')">Thousand-leaf Tofu</a></p>
     <img class="content-image" src="images/luffa with egg & pork.jpg">
-    <p><a href="Luffa with Egg & Pork.html">Luffa with Egg & Pork</a></p>
+    <p><a href="#" onclick="showContent('bp')">Luffa with Egg & Pork</a></p>
+    <div/>
     `,
   Pasta:
     `
@@ -273,14 +315,16 @@ const categoryContent = {
     <br>
     <br>
     <h2>Pasta</h2>
+        <div class="container">
      <img class="content-image" src="images/baked pasta.jpeg">
-    <p><a href="Baked Pasta.html">Baked pasta</a></p>
+    <p><a href="#" onclick="showContent('bp')">Baked pasta</a></p>
     <img class="content-image" src="images/spaghetti bolongnese.jpg">
-    <p><a href="Spaghetti Bolongese.html">Spaghetti Bolongnese</a></p>
+    <p><a href="#" onclick="showContent('sb')">Spaghetti Bolongnese</a></p>
     <img class="content-image" src="images/black pepper sauce pasta.jpg">
-    <p><a href="Black Pepper Sauce pasta.html">Black Pepper Sauce Pasta</a></p>
+    <p><a href="#" onclick="showContent('bpsp')">Black Pepper Sauce Pasta</a></p>
     <img class="content-image" src="images/cream pasta.jpg">
-    <p><a href="Cream Pasta.html">Cream Pasta</a></p>
+    <p><a href="#" onclick="showContent('cp')">Cream Pasta</a></p>
+    </div>
     `,
     WesternStew:
     `
@@ -288,21 +332,24 @@ const categoryContent = {
     <br>
     <br>
     <h2>Stew</h2>
+        <div class="container">
      <img class="content-image" src="images/beef and potato stew.jpeg">
-    <p><a href="Beef & Potato Cream Stew.html">Beef & Potato Cream Stew</a></p>
+    <p><a href="#" onclick="showContent('bpcs')">Beef & Potato Cream Stew</a></p>
     <img class="content-image" src="images/mushroom cream stew.jpg">
-    <p><a href="Mushroom Cream Stew.html">Mushroom Cream Stew</a></p>
-    
+    <p><a href="#" onclick="showContent('mcs')">Mushroom Cream Stew</a></p>
+    </div>
     `,
     WesternOthers:
     `<br>
     <br>
     <br>
     <h2>Others</h2>
+        <div class="container">
      <img class="content-image" src="images/ratatouille base.jpg">
-    <p><a href="Ratatouille Base.html">Ratatouille(just base)</a></p>
+    <p><a href="#" onclick="showContent('rb')">Ratatouille(just base)</a></p>
      <img class="content-image" src="images/swedish meatball.jpg">
-    <p><a href="Swedish Meatball.html">Swedish Meatball</a></p>
+    <p><a href="#" onclick="showContent('sm')">Swedish Meatball</a></p>
+    </div>
     
   
     `
@@ -312,29 +359,31 @@ const categoryContent = {
     <br>
     <br>
     <h2>Bento</h2>
+    <div class="container">
      <img class="content-image" src="images/teriyaki chicken bento.jpg">
-    <p><a href="Teriyaki Chicken Bento.html">Teriyaki Chicken Bento</a></p>
+    <p><a href="#" onclick="showContent('tcb')">Teriyaki Chicken Bento</a></p>
     <img class="content-image" src="images/fried potato bun bento.jpg">
-    <p><a href="Fried Potato Bun Bento.html">Fried Potato Bun Bento</a></p>
+    <p><a href="#" onclick="showContent('fpbb')">Fried Potato Bun Bento</a></p>
      <img class="content-image" src="images/omelette rice bento.jpg">
-    <p><a href="Omelette Rice Bento.html">Omelette Rice Bento</a></p>
+    <p><a href="#" onclick="showContent('orb')">Omelette Rice Bento</a></p>
     <img class="content-image" src="images/english muffin sandwich.jpg">
-    <p><a href="English Muffin Sandwich Bento.html">English Muffin Sandwich Bento</a></p>
+    <p><a href="#" onclick="showContent('emsb')">English Muffin Sandwich Bento</a></p>
     <img class="content-image" src="images/grilled pork bento.jpg">
-    <p><a href="Grilled Pork Bento.html">Grilled Pork Bento</a></p>
+    <p><a href="#" onclick="showContent('gpb')">Grilled Pork Bento</a></p>
     <img class="content-image" src="images/tomato shrimp bento.jpg">
-    <p><a href="Tomato Shrimp Bento.html">Tomato Shrimp Bento</a></p>
+    <p><a href="#" onclick="showContent('tb')">Tomato Shrimp Bento</a></p>
     <img class="content-image" src="images/tonkotsu bento.jpg">
-    <p><a href="Tonkotsu Bento.html">Tonkotsu Bento</a></p>
+    <p><a href="#" onclick="showContent('tb')">Tonkotsu Bento</a></p>
     <img class="content-image" src="images/saute beef bento.jpg">
-    <p><a href="Saute Beef Bento.html">Saute Beef Bento</a></p>
+    <p><a href="#" onclick="showContent('sbb')">Saute Beef Bento</a></p>
+    </div>
     `,
     Contact:`
 <br>
     <br>
     <br>
     <h2>Contact</h2>
-    <p>For inquiries, opinions and feedback, please email me at: <br><u>calin.peng@gmail.com</u></p>
+    <p>For inquiries, opinions and feedback, please email me at: <br><u>tanakakira08@gmail.com</u></p>
     `
     ,
     About:`
@@ -342,16 +391,43 @@ const categoryContent = {
     <br>
     <br>
     <h2>About</h2>
-    <p>Hello, and welcome!<br><br>I'm a high schooler from Ontario, Canada.<br><br> KitchenDelight is a personal space where I share the dishes I love cooking, experimenting with, <br>and perfecting over time. 
+    <p>Hello, and welcome!<br><br>I'm from Ontario, Canada.<br><br> KitchenDelight is a personal space where I share the dishes I love cooking, experimenting with, <br>and perfecting over time. 
       <br><br>From comforting home-style meals to convinient to-go bentos, this site is a collection of recipes inspired by everyday cravings and cultural flavors. 
       <br><br>Here, cooking is not about perfection — it’s about learning, tasting, and enjoying the process. 
       <br><br>I hope these recipes bring warmth, inspiration, and delicious moments into your kitchen.</p>
     `
+    ,
+tsbp:`Taiwanese Style Braised Pork.html`,cms:`Chicken & Mushroom Stew.html`,saspr:`Sweet and Sour Pork Ribs.html`,
+tss:`Taro Sweet Soup.html`,dp:`Dou Pi.html`,dpp:`DongPo Pork.html`,
+cpr:`Clay Pot Rice`,nwsbs:`Noodles with Soybean Paste Sauce.html`,bcwp:`Braised Chicken with Potato.html`,
+wms:`Wintermelon Meatball Soup.html`,sscd:`Soy Sauce Chicken Drumsticks.html`,to:`Teriyaki Oyakodon.html`,
+orwsts:`Omelet Rice with Seafood Tomato Sauce.html`,jsfc:`Japanese Style Fried Chicken (Karaage).html`,tr:`Tonkotsu Ramen.html`,
+s:`Sushi.html`,jstbrb:`Japanese Style Tomato Beef Rice Bowl.html`,
+jsbaps:`Japanese Style Beef and Potato Stew.html`,c:`Curry.html`,sar:`Stew and Riceball.html`,
+cpcs:`Chicken & Potato Cream Stew.html`,g:`Gyudon.html`,bpwp:`Braised Tofu with Pork.html`,
+sflbp:`Stir-Fried Long Beans & Pork.html`,sfwmwp:`Stir-fried Winter Melon with Pork.html`,tlt:`Thousand-leaf Tofu.html`,
+lwep:`Luffa with Egg & Pork.html`,bp:`Baked Pasta.html`,sb:`Spaghetti Bolongese.html`,
+bpsp:`Black Pepper Sauce pasta.html`,cp:`Cream Pasta.html`,bpcs:`Beef & Potato Cream Stew.html`,
+mcs:`Mushroom Cream Stew.html`,rb:`Ratatouille Base.html`,sm:`Swedish Meatball.html`,
+tcb:`Teriyaki Chicken Bento.html`,fpbb:`Fried Potato Bun Bento.html`,orb:`Omelette Rice Bento.html`,
+emsb:`English Muffin Sandwich Bento.html`,gpb:`Grilled Pork Bento.html`,tsb:`Tomato Shrimp Bento.html`,
+tb:`Tonkotsu Bento.html`,sbb:`Saute Beef Bento.html`,
+
+    
+    
     };
 
-function showContent(category) {
+async function showContent(category) {
   const textArea = document.querySelector('#content .text-content');
-  textArea.innerHTML = categoryContent[category];
+  const content = categoryContent[category];
+  console.log("content =", content);
+    console.log("endsWith =", content.endsWith(".html"));
+   if (content.endsWith('.html')) {
+        const response = await fetch(content);
+        textArea.innerHTML = await response.text();
+    } else {
+        textArea.innerHTML = content;
+    }
   document.getElementById('content').style.display = 'block';
   document.querySelector('.overall-content').style.display = 'none';
 }
